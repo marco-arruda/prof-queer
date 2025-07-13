@@ -1,5 +1,6 @@
-
 {
   "name": "Prof Queer",
-  "description": "Uma interface de chat educacional para guiar professores na criação de ambientes de aprendizagem inclusivos, seguros e que celebrem a diversidade."
+  "description": "Uma interface de chat educacional para guiar professores na criação de ambientes de aprendizagem inclusivos, seguros e que celebrem a diversidade.",
+  "requestFramePermissions": [],
+  "prompt": ""
 }

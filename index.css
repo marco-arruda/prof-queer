@@ -107,14 +107,70 @@ body {
 }
 
 .chat-footer {
-  padding: 1rem;
+  padding: 0.5rem 1rem 1rem 1rem;
   background-color: var(--header-footer-bg);
   border-top: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+}
+
+.file-attachment-indicator {
+    font-size: 0.85rem;
+    color: var(--text-color);
+    margin-bottom: 0.5rem;
+    padding: 0.25rem 0.5rem;
+    background-color: #e0e0e0;
+    border-radius: 6px;
+    display: none; /* Hidden by default */
+    align-self: flex-start;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.file-attachment-indicator span {
+    max-width: 200px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.file-attachment-indicator button {
+    background: none;
+    border: none;
+    color: #555;
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: 0;
+    line-height: 1;
+}
+
+.file-attachment-indicator button:hover {
+    color: var(--text-color);
 }
 
 .prompt-form {
   display: flex;
   gap: 0.5rem;
+  align-items: center;
+}
+
+.file-upload-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: none;
+  background-color: transparent;
+  color: var(--accent-color);
+  cursor: pointer;
+  transition: background-color 0.2s;
+  flex-shrink: 0;
+}
+
+.file-upload-button:hover {
+  background-color: rgba(138, 43, 226, 0.1);
 }
 
 #prompt-input {
@@ -124,6 +180,7 @@ body {
   border-radius: 20px;
   font-size: 1rem;
   background-color: #fff;
+  height: 44px;
 }
 
 #prompt-input:focus {
@@ -132,7 +189,7 @@ body {
   box-shadow: 0 0 0 2px rgba(138, 43, 226, 0.2);
 }
 
-.prompt-form button {
+.prompt-form button[type="submit"] {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -144,9 +201,10 @@ body {
   color: var(--accent-text);
   cursor: pointer;
   transition: background-color 0.2s;
+  flex-shrink: 0;
 }
 
-.prompt-form button:hover {
+.prompt-form button[type="submit"]:hover {
   background-color: #7a25c9;
 }
 
