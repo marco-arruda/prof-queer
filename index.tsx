@@ -1,11 +1,6 @@
-/**
- * @license
- * SPDX-License-Identifier: Apache-2.0
- */
 import { GoogleGenAI } from '@google/genai';
 import { marked } from 'marked';
 
-// --- DOM Elements ---
 const chatHistory = document.getElementById('chat-history') as HTMLElement;
 const promptForm = document.getElementById('prompt-form') as HTMLFormElement;
 const promptInput = document.getElementById(
@@ -18,10 +13,8 @@ const fileAttachmentIndicator = document.getElementById(
   'file-attachment-indicator',
 ) as HTMLElement;
 
-// --- App State ---
 let attachedFile: File | null = null;
 
-// --- BNCC Document Content ---
 const bnccContent = `
 EDUCAÇÃO É A BASE
 MINISTÉRIO DA EDUCAÇÃO
@@ -415,7 +408,6 @@ Esta é a sua diretriz mais importante e deve ser modelada em cada resposta.
 - Ser panfletário. O objetivo é educar pela inteligência e pela didática.
 `;
 
-// --- Gemini AI Initialization ---
 const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
 const chat = ai.chats.create({
   model: 'gemini-2.5-flash',
@@ -424,14 +416,12 @@ const chat = ai.chats.create({
   },
 });
 
-// --- Helper Functions ---
 function fileToBase64(file: File): Promise<string> {
   return new Promise((resolve, reject) => {
     const reader = new FileReader();
     reader.readAsDataURL(file);
     reader.onload = () => {
       const result = reader.result as string;
-      // remove the "data:mime/type;base64," prefix
       resolve(result.split(',')[1]);
     };
     reader.onerror = (error) => reject(error);
@@ -467,7 +457,7 @@ function appendMessage(sender: 'user' | 'model' | 'loading', content: string) {
 
 function removeAttachedFile() {
   attachedFile = null;
-  fileUploadInput.value = ''; // Clear the input
+  fileUploadInput.value = '';
   fileAttachmentIndicator.style.display = 'none';
   fileAttachmentIndicator.innerHTML = '';
   promptInput.placeholder = 'Converse com a Prof Queer...';
@@ -489,7 +479,6 @@ function handleFileChange(event: Event) {
   }
 }
 
-// --- Main Application Logic ---
 async function handleFormSubmit(event: Event) {
   event.preventDefault();
   const promptText = promptInput.value.trim();
@@ -558,7 +547,6 @@ function showWelcomeMessage() {
     appendMessage('model', welcomeMessage);
 }
 
-// --- Event Listeners and Initialization ---
 promptForm.addEventListener('submit', handleFormSubmit);
 fileUploadInput.addEventListener('change', handleFileChange);
 
