@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prof Queer</title>
+    <link rel="stylesheet" href="index.css" />
+    <script type="importmap">
+      {
+        "imports": {
+          "@google/genai": "https://esm.sh/@google/genai@^0.14.0",
+          "marked": "https://esm.sh/marked@^13.0.0"
+        }
+      }
+    </script>
+    <script type="module" src="index.tsx"></script>
+  <link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <main class="chat-container">
+      <header class="chat-header">
+        <h1>Prof Queer</h1>
+      </header>
+      <div id="chat-history" class="chat-history">
+        <!-- Chat messages will be appended here -->
+      </div>
+      <footer class="chat-footer">
+        <form id="prompt-form" class="prompt-form">
+          <input
+            type="text"
+            id="prompt-input"
+            placeholder="Converse com a Prof Queer..."
+            autocomplete="off"
+            aria-label="Sua mensagem"
+          />
+          <button type="submit" aria-label="Enviar mensagem">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+            >
+              <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z" />
+            </svg>
+          </button>
+        </form>
+      </footer>
+    </main>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
