@@ -543,7 +543,7 @@ async function handleFormSubmit(event: Event) {
 }
 
 function showWelcomeMessage() {
-    const welcomeMessage = "Olá, minha estrela! Meu nome é Prof Queer e estou aqui para te ajudar a iluminar sua sala de aula com inclusão e afeto. Você pode me pedir para criar um plano de aula do zero ou, se preferir, pode enviar seu planejamento (em PDF ou DOC) clicando no ícone de anexo, e vamos enriquecê-lo juntas. Para começarmos, me conte seus planos!";
+    const welcomeMessage = "Olá, minha estrela! Meu nome é Prof Queer e estou aqui para te ajudar a iluminar sua sala de aula com inclusão e afeto. Você pode me pedir para criar um plano de aula do zero ou, se preferir, pode enviar seu planejamento (em PDF) clicando no ícone de anexo, e vamos enriquecê-lo juntas. Para começarmos, me conte seus planos!";
     appendMessage('model', welcomeMessage);
 }
 
